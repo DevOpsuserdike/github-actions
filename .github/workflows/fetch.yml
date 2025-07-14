@@ -45,5 +45,8 @@ jobs:
           echo "Code started"
           echo "Malcode selected is : $MALCODE"
           cat salesforce/2024_04_Jenkins_StatsFixed.csv | (sed -u 1q; sort -t, -r -n -k3) > sort.csv
+          ls
+          cat sort.csv
+          sleep 10
         env:
           MALCODE: ${{ inputs.malcode }}
