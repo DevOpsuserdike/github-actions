@@ -43,4 +43,5 @@ jobs:
       - name: Code
         run: |
           echo "Code started"
+          echo "Malcode selected is : $MALCODE"
           cat salesforce/2024_04_Jenkins_StatsFixed.csv
