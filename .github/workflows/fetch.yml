@@ -29,8 +29,12 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
-      - name: workign directory path
-        run: pwd
+      - name: Malcode selected
+        run: |
+          echo "Malcode selected is : $MALCODE"
+        env:
+          MALCODE: ${{ inputs.malcode }}
+
 
       # Runs a set of commands using the runners shell
       - name: file content
