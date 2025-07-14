@@ -25,3 +25,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: file content
         run: ls
+      
+      - name: Code
+        run: |
+          echo "Code started"
+          read -p "Enter the Malcode: " MAL
+          cat salesforce/2024_04_Jenkins_StatsFixed.csv
+          echo $MAL
