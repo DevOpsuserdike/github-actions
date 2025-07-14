@@ -48,5 +48,9 @@ jobs:
           ls
           cat sort.csv
           sleep 10
+          echo "Latest run of the malcode $MALCODE build is at" $(awk -F ',' '{print $0}' sort.csv | grep $MALCODE | awk -F ',' '{print $15}' | tail -1)
+          echo "Total builds for malcode $MALCODE:" $(awk -F ',' '{print $0}' sort.csv | grep $MALCODE | awk -F '' '{print $3}' | head -1)
+          echo "Last success run of the malcode $MALCODE build is at" $(awk -F ',' '{print $0}' sort.csv | grep SUCCESS | grep $MALCODE | head -1 | awk -F ',' '{print $15}')
+          echo "Last fail run of the malcode $MALCODE build is at" $(awk -F ',' '{print $0}' sort.csv | grep FAILURE| grep $MALCODE | head -1 | awk -F ',' '{print $15}')
         env:
           MALCODE: ${{ inputs.malcode }}
